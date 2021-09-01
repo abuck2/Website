@@ -1,9 +1,27 @@
 {% extends 'main.html' %}
 
 {% block content %} 
+
+{{message}}
+
+
 <h1>Projects</h1>
 <p>Les bryophytes sont des plantes terrestres thalloïdes ou feuillées non vascularisées. Parmi les plantes actuelles, les bryophytes terrestres et les bryophytes aquatiques sont celles qui ont conservé le plus de caractères des premières plantes ayant colonisé la terre ferme. Les ancêtres de toutes les plantes terrestres, donc des bryophytes, sont des algues vertes charophycées.
 
 Même si certaines structures anatomiques leur permettent de résister à la dessiccation, les Bryophytes sont encore extrêmement dépendantes de l'eau ou des milieux humides, ou en tout cas d'une hygrométrie minimale au moment de leur reproduction. Cette exigence n'empêche une grande plasticité écologique qui leur permet de vivre dans toutes les régions du globe, depuis l'équateur aux pôles3. </p>
+
+
+<hr>
+
+<h1> List of projects </h1>
+<ul>
+	{% for project in projects %}
+
+	<li>Title:{{project.title}}</li>
+	<li>Title:<a href="{% url 'project' project.id %}">{{project.title}}</li>
+	
+	{% endfor %}
+
+</ul>
 
 {% endblock content %}
