@@ -16,9 +16,7 @@ Même si certaines structures anatomiques leur permettent de résister à la des
 <h1> List of projects </h1>
 <ul>
 	{% for project in projects %}
-
-	<li>Title:{{project.title}}</li>
-	<li>Title:<a href="{% url 'project'project.id %}">{{project.title}}</li>
+	<li>Title:<a href="{% url 'project' project.id %}" class="project">{{project.title}}</li>
 	
 	{% endfor %}
 
